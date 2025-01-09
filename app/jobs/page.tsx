@@ -11,7 +11,7 @@ interface Job {
   role: string;
   jobType: string;
   location: string;
-  hybrid: boolean;
+  hybrid: string;
   jobFunction: string;
   jobDescription: string;
   project: string;
@@ -87,9 +87,9 @@ const JobsPage = () => {
         selectedJobTypes.length > 0
           ? selectedJobTypes.some((type) => {
               if (type === "Remote") {
-                return job.jobType === "Remote" && job.hybrid === false;
+                return job.jobType === "Remote" && job.hybrid === "false";
               } else {
-                return job.hybrid === true;
+                return job.hybrid === "true";
               }
             })
           : true;

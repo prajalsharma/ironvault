@@ -9,7 +9,7 @@ interface Job {
   role: string;
   jobType: string;
   location: string;
-  hybrid: boolean;
+  hybrid: string;
   jobFunction: string;
   jobDescription: string;
   project: string;

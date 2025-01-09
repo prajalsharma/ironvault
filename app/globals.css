@@ -70,7 +70,7 @@
 .pattern {
   background-image: url("/assets/bitcoin.png");
   background-size: 5%;
-  opacity: 0.4;
+  opacity: 0.1;
 }
 
 @media (min-height: 640px) {

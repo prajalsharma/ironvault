@@ -44,7 +44,7 @@ const JobsPage = () => {
         if (response.ok) {
           const data = await response.json();
 
-          allJobs = data.jobs;
+          allJobs = data.btcJobs;
         }
       } catch (error) {
         console.error("Error fetching jobs:", error);

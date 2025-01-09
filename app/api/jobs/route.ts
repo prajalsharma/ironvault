@@ -6,17 +6,11 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    // Connect to MongoDB
     await connectToMongoose();
 
-    const jobs = await BtcJob.find().sort({ id: 1 });
-    console.log(jobs);
-
-    // Fetch jobs sorted by 'id' in ascending order
+    const btcJobs = await BtcJob.find().sort({ id: 1 });
     
-
-    // Return the sorted jobs as JSON
-    const response = NextResponse.json({ status: 200, jobs });
+    const response = NextResponse.json({ status: 200, btcJobs });
     response.headers.set("Cache-Control", "no-store");
     return response;
   } catch (error) {

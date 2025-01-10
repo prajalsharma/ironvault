@@ -30,7 +30,7 @@ const Header = () => {
         <div className="flex items-center gap-3 font-semibold text-sm">
           <div className="flex items-center gap-2">
             <p className="hidden md:block">Join Community</p>
-            <a href="#">
+            <a href="https://x.com/Bitcoin_Careers" target="_blank" rel="noopener noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"

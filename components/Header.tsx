@@ -57,7 +57,7 @@ const Header = () => {
             Bit Quest
           </a>
           <a
-            href="/#"
+            href="https://forms.gle/XmAb1HeHwRGX9hte9"
             className="border border-orangish rounded-md px-6 py-2.5 hover:text-white hover:bg-orangish transition-colors">
             Add Jobs
           </a>

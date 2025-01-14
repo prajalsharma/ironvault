@@ -32,6 +32,14 @@ export default function RootLayout({
             width="0"
             style={{ display: "none", visibility: "hidden" }}></iframe>
         </noscript>
+<script>
+var script = document.createElement('script');
+script.defer = true;
+script.dataset.domain = "bitcoincareers.xyz/jobs";
+script.dataset.api = "https://plausible.io/api/event";
+script.src = "https://plausible.io/js/script.outbound-links.js";
+document.getElementsByTagName('head')[0].appendChild(script);
+</script>
 
         <ThemeProvider attribute="class" defaultTheme="light" disableTransitionOnChange>
           <Header />

@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -6,41 +5,28 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import Header from "@/components/Header";
 import SecondaryNavbar from "@/components/SecondaryNavbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import Script from "next/script";
 
 const plus_jakarta_sans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 const GTMID: string = process.env.NEXT_PUBLIC_GTM_ID || "";
 
 export const metadata: Metadata = {
-  title: "BitCoin Careers",
+  title: "Bitcoin Careers",
   description: "Job Dashboard",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-       <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5VMWRZVJ');</script>
-<!-- End Google Tag Manager -->
+        {/* Google Tag Manager - Automatically handled via @next/third-parties/google */}
+        <GoogleTagManager gtmId={GTMID} />
       </head>
-      <body className={`${plus_jakarta_sans.className}`}>
-        <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5VMWRZVJ');</script>
-<!-- End Google Tag Manager -->
 
-        {/* Plausible Script */}
+      <body className={`${plus_jakarta_sans.className}`}>
+        {/* Plausible Analytics Script */}
         <Script
           strategy="afterInteractive"
           src="https://plausible.io/js/script.outbound-links.js"

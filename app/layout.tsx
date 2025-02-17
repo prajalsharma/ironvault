@@ -19,37 +19,45 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Tag Manager */}
-        <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6VTM86JQMS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        {/* Google Analytics (GA4) */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6VTM86JQMS" />
+        <Script
+          id="ga4-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-6VTM86JQMS');
+            `,
+          }}
+        />
 
-  gtag('config', 'G-6VTM86JQMS');
-</script>
+        {/* Google Tag Manager (GTM) */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-              'https://www.googletagmanager.com/gtm.js?id=GTM-5VMWRZVJ'+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','GTM-5VMWRZVJ');`,
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-5VMWRZVJ');
+            `,
           }}
         />
       </head>
 
       <body className={`${plus_jakarta_sans.className}`}>
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager (noscript fallback) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-5VMWRZVJ"
             height="0"
             width="0"
-            style={{ display: "none", visibility: "hidden" }}
+            style="display:none;visibility:hidden"
           ></iframe>
         </noscript>
 

@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Google Analytics (GA4) */}
+        {/* Google Tag Manager */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-6VTM86JQMS" />
         <Script
           id="ga4-script"
@@ -34,7 +34,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Google Tag Manager (GTM) */}
+        {/* Google Tag Manager */}
         <Script
           id="gtm-script"
           strategy="afterInteractive"
@@ -57,7 +57,7 @@ export default function RootLayout({
             src="https://www.googletagmanager.com/ns.html?id=GTM-5VMWRZVJ"
             height="0"
             width="0"
-            style="display:none;visibility:hidden"
+            style={{ display: "none", visibility: "hidden" }} // Fixed JSX object syntax
           ></iframe>
         </noscript>
 
